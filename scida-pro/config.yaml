@@ -1,0 +1,130 @@
+# SCiDA Pro Configuration File
+
+# Color scheme
+colors:
+  primary: '#4F81BD'
+  secondary: '#C0504D'
+  accent: '#9BBB59'
+  warning: '#F79646'
+  purple: '#8064A2'
+  cyan: '#4BACC6'
+  black: '0'
+  gray: '0.5'
+  list:
+    - '#4F81BD'
+    - '#C0504D'
+    - '#9BBB59'
+    - '#F79646'
+    - '#8064A2'
+    - '#4BACC6'
+    - '0'
+    - '0.5'
+
+# Plot labels with LaTeX formatting
+plot_labels:
+  irev_axis_label: '$\\mathrm{\\mathsf{I_{REV}}}$ [A]'
+  rser_axis_label: '$\\mathrm{\\mathsf{R_{SERIES}}}$ [mOhm $\\cdot$ cm$^2$]'
+  rshunt_axis_label: '$\\mathrm{\\mathsf{R_{SHUNT}}}$ [kOhm]'
+  eta_axis_label: '$\\mathrm{\\mathsf{Eta}}$ [%]'
+  voc_axis_label: '$\\mathrm{\\mathsf{V_{OC}}}$ [V]'
+  isc_axis_label: '$\\mathrm{\\mathsf{I_{SC}}}$ [A]'
+  ff_axis_label: '$\\mathrm{\\mathsf{FF}}$ [%]'
+  vocisc_axis_label: '$\\mathrm{\\mathsf{V_{OC}\\ *\\ I_{SC}}}$ [V*A]'
+
+# Plot selection list
+plot_selection_list:
+  - 'Uoc'
+  - 'Isc'
+  - 'Voc*Isc'
+  - 'FF'
+  - 'Eta'
+  - 'RserLfDfIEC'
+  - 'Rsh'
+  - 'IRev1'
+
+plot_label_list:
+  - 'voc_axis_label'
+  - 'isc_axis_label'
+  - 'vocisc_axis_label'
+  - 'ff_axis_label'
+  - 'eta_axis_label'
+  - 'rser_axis_label'
+  - 'rshunt_axis_label'
+  - 'irev_axis_label'
+
+# Plot types
+plot_types:
+  - 'Boxplot'
+  - 'Violinplot'
+  - 'Category scatter'
+  - 'Walk-through'
+  - 'Rolling mean'
+  - 'Low to high'
+  - 'Histogram'
+  - 'Density'
+  - 'Histogram + density'
+  - 'Voc-Isc'
+  - 'Eta-FF'
+  - 'Rsh-FF'
+
+# Default filters
+default_filters:
+  - ['IRev1', '>', 3]
+  - ['FF', '<', 70]
+  - ['Eta', '<', 16]
+  - ['FF', '<', 75]
+  - ['Rsh', '<', 20]
+  - ['Eta', '<', 18]
+
+# Data column indices
+data_columns:
+  - 'Uoc'
+  - 'Isc'
+  - 'RserLfDfIEC'
+  - 'Rsh'
+  - 'FF'
+  - 'Eta'
+  - 'IRev1'
+
+# Label formats
+label_formats:
+  0: ['Uoc', 'Isc', 'RserLfDfIEC', 'Rsh', 'FF', 'Eta', 'IRev1']
+  1: ['Uoc0', 'Isc0', 'Rseries_multi_level', 'Rshunt_SC', 'Fill0', 'Eff0', 'Ireverse_2']
+  2: ['Uoc', 'Isc', 'RserIEC891', 'RshuntDfDr', 'FF', 'Eta', 'IRev1']
+  3: ['Uoc', 'Isc', 'Rs', 'Rsh', 'FF', 'NCell', 'Irev2']
+  4: ['Uoc', 'Isc', 'RserLfDfIEC', 'Rsh', 'FF', 'Eta', 'IRev1']
+
+# Summary table configuration
+summary:
+  index: ['Best cell', 'Median', 'Average', 'Std.dev.']
+  columns: ['Voc [V]', 'Isc [A]', 'Rser [mOhm*cm2]', 'Rshunt [kOhm]', 'FF [%]', 'Eta [%]', 'Irev [A]']
+
+# Application settings
+app:
+  window_title: 'Solar cell data analysis'
+  initial_size: [1024, 576]
+  plot_window_size: [1020, 752]
+  font_size: 12
+  font_family: 'sans-serif'
+  font_size_plot: 14
+  font_size_axis: 24
+  dpi: 100
+  figure_size: [10.0, 10.0]
+
+# UI settings
+ui:
+  palette:
+    window: [200, 201, 209]
+    base: [255, 255, 255]
+    alternate_base: [200, 201, 209]
+    button: [200, 201, 209]
+    highlight: [255, 79, 0]
+
+# Plot defaults
+plot_defaults:
+  dot_size: 20
+  line_width: 3
+  scatter_amount: 0.5
+  grid_enabled: true
+  legend_enabled: true
+  title_enabled: false
