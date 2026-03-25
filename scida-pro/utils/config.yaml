@@ -1,0 +1,108 @@
+# SCiDA Pro Configuration File
+# 太阳能电池数据分析工具配置文件
+
+# 颜色方案
+colors:
+  plot_colors: ['#4F81BD', '#C0504D', '#9BBB59', '#F79646', '#8064A2', '#4BACC6', '0', '0.5']
+
+# 图表轴标签格式 (LaTeX格式)
+axis_labels:
+  voc: r'$\mathrm{\mathsf{V_{OC}\ [V]}}$'
+  isc: r'$\mathrm{\mathsf{I_{SC}\ [A]}}$'
+  vocisc: r'$\mathrm{\mathsf{V_{OC}\ *\ I_{SC}\ [V*A]}}$'
+  ff: r'$\mathrm{\mathsf{FF\ [\%]}}$'
+  eta: r'$\mathrm{\mathsf{Eta\ [\%]}}$'
+  rser: r'$\mathrm{\mathsf{R_{SERIES}\ [mOhm \cdot cm^{2}]}}$'
+  rsh: r'$\mathrm{\mathsf{R_{SHUNT}\ [kOhm]}}$'
+  irev: r'$\mathrm{\mathsf{I_{REV}\ [A]}}$'
+  normalized_cell: r'$\mathrm{\mathsf{Normalized\ cell\ number\ [a.u.]}}$'
+  density: r'$\mathrm{\mathsf{Density\ [a.u.]}}$'
+
+# 可绘制的参数列表
+plot_parameters:
+  - Uoc
+  - Isc
+  - Voc*Isc
+  - FF
+  - Eta
+  - RserLfDfIEC
+  - Rsh
+  - IRev1
+
+# 图表类型列表
+plot_types:
+  - Boxplot
+  - Violinplot
+  - Category scatter
+  - Walk-through
+  - Rolling mean
+  - Low to high
+  - Histogram
+  - Density
+  - Histogram + density
+  - Voc-Isc
+  - Eta-FF
+  - Rsh-FF
+
+# 数据标签格式 (支持多种设备格式)
+label_formats:
+  format_a: ['Uoc', 'Isc', 'RserLfDfIEC', 'Rsh', 'FF', 'Eta', 'IRev1']
+  format_b: ['Uoc0', 'Isc0', 'Rseries_multi_level', 'Rshunt_SC', 'Fill0', 'Eff0', 'Ireverse_2']
+  format_c: ['Uoc', 'Isc', 'RserIEC891', 'RshuntDfDr', 'FF', 'Eta', 'IRev1']
+  format_d: ['Uoc', 'Isc', 'Rs', 'Rsh', 'FF', 'NCell', 'Irev2']
+  format_e: ['Uoc', 'Isc', 'RserLfDfIEC', 'Rsh', 'FF', 'Eta', 'IRev1']
+
+# 默认过滤器配置
+default_filters:
+  - ['IRev1', '>', 3]
+  - ['FF', '<', 70]
+  - ['Eta', '<', 16]
+  - ['FF', '<', 75]
+  - ['Rsh', '<', 20]
+  - ['Eta', '<', 18]
+
+# 汇总表格配置
+summary:
+  index: ['Best cell', 'Median', 'Average', 'Std.dev.']
+  columns: ['Voc [V]', 'Isc [A]', 'Rser [mOhm*cm2]', 'Rshunt [kOhm]', 'FF [%]', 'Eta [%]', 'Irev [A]']
+  rounding: [3, 2, 2, 2, 1, 2, 2]
+
+# 图表默认设置
+plot_defaults:
+  window_width: 1020
+  window_height: 752
+  dpi: 100
+  figure_size: [10.0, 10.0]
+  font_family: 'sans-serif'
+  font_size: 14
+  
+# 散点图默认设置
+scatter_defaults:
+  dotsize: 20
+  edgecolors: 'white'
+  linewidths: 0.3
+
+# 线图默认设置
+line_defaults:
+  linewidth: 3
+
+# 图例默认设置
+legend_defaults:
+  loc: 'lower left'
+  scatterpoints: 1
+  markerscale: 3
+  frameon: false
+
+# 网格默认设置
+grid_defaults:
+  enabled: true
+
+# 数据列索引
+data_columns:
+  - Uoc
+  - Isc
+  - RserLfDfIEC
+  - Rsh
+  - FF
+  - Eta
+  - IRev1
